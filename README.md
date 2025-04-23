@@ -1,0 +1,7 @@
+1. JQuery required.
+2. Demo code can be opened with Microsoft Visual Studio, just double-click WebPivot.csproj.
+3. Json data format is simple. It can be fetched from database ( DataTable format ) , and pass to client with Web API.
+
+1. 使用 JQuery
+2. DEMO 程式是用 Microsoft Visual Studio 寫的. 雙擊 WebPivot.csproj 檔案就可以打開專案
+3. JSON 格式簡單化, 可以從資料庫抓取成 DataTable 格式, 再透過 Web API 傳到前端
