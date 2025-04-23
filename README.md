@@ -10,7 +10,7 @@
 3. JSON 格式簡單化, 可以從資料庫抓取成 DataTable 格式, 再透過 Web API 傳到前端
 4. 前端解決方案 ( /wwwroot/js/webpivot-1.0.1.js )
 
-<img src="https://i.ibb.co/NghGQLbG/wp-2.png" alt="wp-2" border="0" />
+[url=https://postimg.cc/H8060jK8][img]https://i.postimg.cc/H8060jK8/wp-1.png[/img][/url]
 
 Donation
 
