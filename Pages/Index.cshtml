@@ -1,0 +1,93 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Random Data";
+}
+
+<div>
+
+    <div class="webpivot" ></div>
+
+</div>
+
+<script src="~/js/jquery-3.7.1.js" ></script>
+<script src="~/js/webpivot-1.0.1.js"></script>
+
+<script>
+
+    $( document ).ready( () => 
+    {
+        $.ajax(
+        {
+            url:'../json/rd2.json' ,
+            success:function(d)
+            {
+                let p =
+                {
+                    leftColumns :
+                    [
+                        {
+                            name:'COL_A' ,
+                            width:'80px' ,
+                            color:'white' ,
+                            backgroundColor:'navy'
+
+                        } ,
+                        {
+                            name:'COL_B' ,
+                            width:'80px' ,
+                            color:'white' ,
+                            backgroundColor:'navy'
+                        } ,
+                        {
+                            name:'COL_C' ,
+                            width:'90px' ,
+                            color:'white' ,
+                            backgroundColor:'navy'
+                        } ,
+                        {
+                            name:'COL_D' ,
+                            width:'100px' ,
+                            color:'white' ,
+                            backgroundColor:'navy'
+                        } ,
+                        {
+                            name:'COL_E' ,
+                            width:'100px' ,
+                            color:'white' ,
+                            backgroundColor:'navy'
+                        } 
+                    ] ,
+                    rightColumns :
+                    {
+                        name:'COL_H' ,
+                        width:'80px' ,
+                        color:'darkgreen' ,
+                        backgroundColor:'lightgray'
+                    } ,
+                    sum:
+                    {
+                        text:'Sum' 
+                    } ,
+                    numberColumn : 'COL_I' ,
+                    width:'' ,
+                    height:'700px' ,
+                    headerHeight : '50px' ,
+                    cellHeight : '22px' ,
+                    postDisplay : () => 
+                    {
+                        $( 'tr.sum' ).css( 'background-color' , 'beige' ) ;
+                        $( 'td.sum' ).css( 'background-color' , 'beige' ) ;
+                    }
+                } ;
+
+                webPivot( d , p ) ;
+            }
+        } ) ;
+
+    } ) ;
+        
+
+</script>
+
+

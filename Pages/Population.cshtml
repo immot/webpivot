@@ -1,0 +1,77 @@
+﻿@page
+@model PopulationModel
+@{
+    ViewData["Title"] = "台灣人口統計";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+    <div class="webpivot"></div>
+
+</div>
+
+<script src="~/js/jquery-3.7.1.js"></script>
+<script src="~/js/webpivot-1.0.1.js"></script>
+
+<script>
+    $( document ).ready( () => 
+    {
+        let p =
+        {
+            leftColumns :
+            [
+                {
+                    name:'年份' ,
+                    width:'80px' ,
+                    color:'white' ,
+                    backgroundColor:'navy'
+                } ,
+                {
+                    name:'年齡' ,
+                    width:'80px' ,
+                    color:'white' ,
+                    backgroundColor:'navy'
+                } ,
+                {
+                    name:'性別' ,
+                    width:'50px' ,
+                    color:'white' ,
+                    backgroundColor:'navy'
+                }
+            ] ,
+            rightColumns :
+            {
+                name:'縣市' ,
+                width:'90px' ,
+                color:'darkgreen' ,
+                backgroundColor:'lightgray'
+            } ,
+            sum:
+            {
+                text:'合計' 
+            } ,
+            numberColumn : '人數' ,
+            width:'' ,
+            height:'700px' ,
+            headerHeight : '50px' ,
+            cellHeight : '22px' ,
+            postDisplay : () => 
+            {
+                $( 'tr.sum' ).css( 'background-color' , 'beige' ) ;
+                $( 'td.sum' ).css( 'background-color' , 'beige' ) ;
+            }
+        } ;
+
+        $.ajax(
+        {
+            url:'../json/population.json' ,
+            success:function(d)
+            {
+                d = d.filter( x => ( x[ '縣市' ] != '臺灣省' ) && ( x[ '縣市' ] != '福建省' ) && ( x[ '縣市' ] != '臺灣地區' ) ) ;
+
+                webPivot( d , p ) ;
+            }
+        } ) ;
+    } ) ;
+</script>
