@@ -5,3 +5,7 @@
 1. 使用 JQuery
 2. DEMO 程式是用 Microsoft Visual Studio 寫的. 雙擊 WebPivot.csproj 檔案就可以打開專案
 3. JSON 格式簡單化, 可以從資料庫抓取成 DataTable 格式, 再透過 Web API 傳到前端
+
+Donation
+
+https://buymeacoffee.com/immot
