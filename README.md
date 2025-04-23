@@ -11,6 +11,7 @@
 4. 前端解決方案 ( /wwwroot/js/webpivot-1.0.1.js )
 
 https://i.postimg.cc/H8060jK8/wp-1.png
+https://i.postimg.cc/RWZgfSTq/wp-2.png
 
 Donation
 
